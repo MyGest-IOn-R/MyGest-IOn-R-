@@ -1,0 +1,15 @@
+#!/bin/bash
+
+read adrip
+echo "ton ip est:" $adrip
+
+rep=$(ping $adrip -w 2|grep " 0% packet loss"|wc -l)
+echo $rep
+if [[ $rep -eq 1 ]]
+then
+#figlet "la co est good"
+	#echo $adrip >> pingrep.txt
+else
+	#figlet "claque  au  sol"
+	#echo $adrip >> pingfalse.txt
+fi
